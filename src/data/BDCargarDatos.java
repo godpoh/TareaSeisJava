@@ -8,7 +8,7 @@ import java.io.*;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
-public class BDVehicles {
+public class BDCargarDatos {
 
     public ArrayList<String> CargarDatosEnJCBVehiculos(String ListaMarcaVehiculos) {
         ArrayList<String> vehiculos = new ArrayList();
