@@ -4,6 +4,8 @@
   <NonVisualComponents>
     <Component class="javax.swing.ButtonGroup" name="SVUOAutomovil">
     </Component>
+    <Component class="javax.swing.ButtonGroup" name="SiNo">
+    </Component>
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="2"/>
@@ -46,14 +48,14 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblMarcas" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jCBMarcas" min="-2" pref="144" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblColores" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jCBColores" min="-2" pref="144" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
@@ -73,8 +75,40 @@
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="286" max="-2" attributes="0"/>
-                          <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="lblVelocidadMaxima" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="lblPotencia" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="txtPotencia" max="32767" attributes="0"/>
+                                      <Component id="jCBVelocidadMaxima" pref="81" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="lblOcupantes" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblDisponibilidad" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Component id="rbtnSi" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="rbtnNo" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="jSpinnerOcupantes" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace min="-2" pref="476" max="-2" attributes="0"/>
+                                  <Component id="btnGuardar" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
                       </Group>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
@@ -90,8 +124,8 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jCBMarcas" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jCBColores" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblMarcas" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblColores" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="lblPrecio" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="rbtnSVU" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -104,8 +138,23 @@
                           <Component id="rbtnAutomovil" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="124" max="32767" attributes="0"/>
-                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblPotencia" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtPotencia" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jSpinnerOcupantes" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblOcupantes" alignment="1" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblVelocidadMaxima" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblDisponibilidad" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="rbtnSi" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="rbtnNo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jCBVelocidadMaxima" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="71" max="32767" attributes="0"/>
+                  <Component id="btnGuardar" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -140,12 +189,12 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel1">
+        <Component class="javax.swing.JLabel" name="lblMarcas">
           <Properties>
             <Property name="text" type="java.lang.String" value="Marcas"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel2">
+        <Component class="javax.swing.JLabel" name="lblColores">
           <Properties>
             <Property name="text" type="java.lang.String" value="Colores"/>
           </Properties>
@@ -180,10 +229,65 @@
             <Property name="text" type="java.lang.String" value="Automovil"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="btnGuardar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Guardar"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblPotencia">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Potencia:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtPotencia">
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblVelocidadMaxima">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Velocidad Maxima:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JSpinner" name="jSpinnerOcupantes">
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblOcupantes">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Ocupantes:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblDisponibilidad">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Disponibilidad:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnSi">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="SiNo"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Si"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnNo">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="SiNo"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="No"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="jCBVelocidadMaxima">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="4">
+                <StringItem index="0" value="Item 1"/>
+                <StringItem index="1" value="Item 2"/>
+                <StringItem index="2" value="Item 3"/>
+                <StringItem index="3" value="Item 4"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>
