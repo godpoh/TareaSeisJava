@@ -10,14 +10,16 @@ import javax.swing.JOptionPane;
 
 public class BDVehicles {
 
-    public void InsertarEnArchivoVehiculo(String Vehiculo) {
-        try {
-            File archivo = new File("ListaMarcaVehiculos.txt");
-            BufferedWriter archi = new BufferedWriter(new FileWriter(archivo, true));
-            archi.write(Vehiculo + "\n");
-            archi.close();
+    public ArrayList<String> CargarDatosEnJCBVehiculos(String ListaMarcaVehiculos) {
+        ArrayList<String> vehiculos = new ArrayList();
+        try (BufferedReader leedor = new BufferedReader(new FileReader(ListaMarcaVehiculos))) {
+            String linea;
+            while ((linea = leedor.readLine()) != null) {
+                vehiculos.add(linea);
+            }  
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error al escribir el archivo", "Mensaje de error:", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Un error en el archivo ha ocurrido.");
         }
+        return vehiculos;
     }
 }

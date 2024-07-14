@@ -1,0 +1,7 @@
+Rojo
+Verde
+Azul
+Negro
+Morado
+Blanco
+Cafe

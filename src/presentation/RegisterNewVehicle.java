@@ -4,6 +4,11 @@
  */
 package presentation;
 
+import java.util.ArrayList;
+import data.BDColors;
+import javax.swing.DefaultComboBoxModel;
+import data.BDVehicles;
+
 /**
  *
  * @author Admin
@@ -16,6 +21,7 @@ public class RegisterNewVehicle extends javax.swing.JDialog {
     public RegisterNewVehicle(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        cargarElementosDeLosArchivosEnLosjCombox();
     }
 
     /**
@@ -43,7 +49,11 @@ public class RegisterNewVehicle extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jCBMarcas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jCBMarcas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCBMarcasActionPerformed(evt);
+            }
+        });
 
         jCBColores.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -99,14 +109,15 @@ public class RegisterNewVehicle extends javax.swing.JDialog {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCBMarcas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCBColores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2)
-                    .addComponent(lblPrecio)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rbtnSVU))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jCBMarcas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jCBColores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel1)
+                        .addComponent(jLabel2)
+                        .addComponent(lblPrecio)
+                        .addComponent(rbtnSVU)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblNumeroPlaca)
@@ -133,6 +144,28 @@ public class RegisterNewVehicle extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void cargarElementosDeLosArchivosEnLosjCombox() {
+        BDColors bdColors = new BDColors();
+        ArrayList<String> colores = bdColors.CargarDatosEnJCBColores("ListaColores.txt");
+        DefaultComboBoxModel<String> modeloColor = new DefaultComboBoxModel<>();
+        for (String color : colores) {
+            modeloColor.addElement(color);
+        }
+        jCBColores.setModel(modeloColor);
+        
+        BDVehicles bdVehicles = new BDVehicles();
+        ArrayList<String> vehiculos = bdVehicles.CargarDatosEnJCBVehiculos("ListaMarcaVehiculos.txt");
+        DefaultComboBoxModel<String> modeloVehiculo = new DefaultComboBoxModel<>();
+        for (String vehiculo : vehiculos) {
+            modeloVehiculo.addElement(vehiculo);
+        }
+        jCBMarcas.setModel(modeloVehiculo);
+    }
+
+    private void jCBMarcasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCBMarcasActionPerformed
+
+    }//GEN-LAST:event_jCBMarcasActionPerformed
 
     /**
      * @param args the command line arguments

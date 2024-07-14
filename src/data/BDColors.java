@@ -6,21 +6,24 @@ package data;
 
 import java.io.*;
 import javax.swing.JOptionPane;
+import java.util.ArrayList;
+
 /**
  *
  * @author Admin
  */
 public class BDColors {
 
-    public void InsertarEnArchivoColores(String Colores) {
-        try {
-            File archivo = new File("ListaColores.txt");
-            BufferedWriter archi = new BufferedWriter(new FileWriter(archivo,true));
-            archi.write(Colores + "\n");
-            archi.close();
-            
+    public ArrayList<String> CargarDatosEnJCBColores(String ListaColores) {
+        ArrayList<String> colores = new ArrayList();
+        try (BufferedReader leedor = new BufferedReader(new FileReader(ListaColores))) {
+            String linea;
+            while ((linea = leedor.readLine()) != null) {
+                colores.add(linea);
+            }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error al escribir en el archivo:", "Mensaje de error", JOptionPane.ERROR_MESSAGE );
+            JOptionPane.showMessageDialog(null, "Error en el archivo, no existente o algo con el archivo sucedio", "Mensaje de error", JOptionPane.ERROR_MESSAGE);
         }
+        return colores;
     }
 }
