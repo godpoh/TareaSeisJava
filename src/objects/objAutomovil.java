@@ -18,7 +18,7 @@ public class objAutomovil {
     private String Potencia;
     private String VelocidadMaxima;
     
-    public static ArrayList listaAutomoviles = new ArrayList();
+    public static ArrayList<objAutomovil> listaAutomoviles = new ArrayList();
     
     public objAutomovil(String marca, String color, String precio, String placa, String Potencia, String VelocidadMaxima) {
         this.marca = marca;

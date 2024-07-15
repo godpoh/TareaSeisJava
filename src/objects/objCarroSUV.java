@@ -19,7 +19,7 @@ public class objCarroSUV {
     private int ocupantes;
     private String disponibilidad;
 
-    public static ArrayList listaCarrosSUV = new ArrayList();
+    public static ArrayList<objCarroSUV> listaCarrosSUV = new ArrayList();
 
     public objCarroSUV(String marca, String color, String precio, String placa, int ocupantes, String disponibilidad) {
         this.marca = marca;

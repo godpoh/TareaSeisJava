@@ -8,10 +8,7 @@ import business.Automovil;
 import business.SVU;
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
-import data.BDCargarDatos;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import javax.swing.SpinnerNumberModel;
+import data.BDArchivos;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.text.AbstractDocument;
@@ -193,11 +190,12 @@ public class RegisterNewVehicle extends javax.swing.JDialog {
                         .addComponent(txtNumeroPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(rbtnAutomovil)))
                 .addGap(12, 12, 12)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblPotencia)
-                    .addComponent(txtPotencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSpinnerOcupantes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblOcupantes))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblOcupantes, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lblPotencia)
+                        .addComponent(txtPotencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jSpinnerOcupantes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblVelocidadMaxima)
@@ -227,7 +225,7 @@ public class RegisterNewVehicle extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cargarElementosDeLosArchivosEnLosjCombox() {
-        BDCargarDatos bdColors = new BDCargarDatos();
+        BDArchivos bdColors = new BDArchivos();
         ArrayList<String> colores = bdColors.CargarDatosEnJCBVehiculos("ListaColores.txt");
         DefaultComboBoxModel<String> modeloColor = new DefaultComboBoxModel<>();
         for (String color : colores) {
@@ -235,7 +233,7 @@ public class RegisterNewVehicle extends javax.swing.JDialog {
         }
         jCBColores.setModel(modeloColor);
 
-        BDCargarDatos bdVehicles = new BDCargarDatos();
+        BDArchivos bdVehicles = new BDArchivos();
         ArrayList<String> vehiculos = bdVehicles.CargarDatosEnJCBVehiculos("ListaMarcaVehiculos.txt");
         DefaultComboBoxModel<String> modeloVehiculo = new DefaultComboBoxModel<>();
         for (String vehiculo : vehiculos) {
@@ -243,7 +241,7 @@ public class RegisterNewVehicle extends javax.swing.JDialog {
         }
         jCBMarcas.setModel(modeloVehiculo);
 
-        BDCargarDatos bdVelocidadMaxima = new BDCargarDatos();
+        BDArchivos bdVelocidadMaxima = new BDArchivos();
         ArrayList<String> bdVelocidades = bdVelocidadMaxima.CargarDatosEnJCBVehiculos("ListaVelocidadMaxima.txt");
         DefaultComboBoxModel<String> velocidades = new DefaultComboBoxModel<>();
         for (String bdVelocidad : bdVelocidades) {

@@ -1,6 +1,0 @@
-Toyota,Negro,435,GFD534,2,Si
-Toyota,Negro,435,GFD534,2,Si
-Toyota,Negro,435,GFD534,2,Si
-Toyota,Negro,435,GFD534,2,Si
-Toyota,Negro,435,GFD534,2,Si
-Ford,Rojo,43432,HGF654,4234,150

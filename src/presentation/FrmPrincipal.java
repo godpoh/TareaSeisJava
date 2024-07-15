@@ -4,6 +4,8 @@
  */
 package presentation;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Admin
@@ -117,9 +119,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnReadVehicleInformationActionPerformed
 
     private void EditVehicleInformationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditVehicleInformationActionPerformed
-        EditVehicleInformation EditVehicleInformationWindow = new EditVehicleInformation(this, true);
-        EditVehicleInformationWindow.setLocationRelativeTo(null);
-        EditVehicleInformationWindow.setVisible(true);
+        JOptionPane.showMessageDialog(null, "Se encuentra en mantenimiento...");
 
     }//GEN-LAST:event_EditVehicleInformationActionPerformed
 
